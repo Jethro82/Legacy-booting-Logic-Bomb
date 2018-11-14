@@ -4,7 +4,7 @@ TYPE Sector
         signature AS INTEGER
 END TYPE
 DIM SHARED Sector AS Sector
-buffer.signature = &HAA55 ;add boot signature to end of sector
+Sector.signature = &HAA55 ;add boot signature to end of sector
 OPEN "floppy.img" FOR RANDOM AS #1 LEN = 512
 WriteSector 1, "floppybs"
 WriteSector 2, "datechck"
